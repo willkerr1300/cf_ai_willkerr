@@ -45,7 +45,7 @@ export default function App() {
     <div className="app">
       <header className="header">
         <h1>CF AI Research Agent</h1>
-        <p>Llama 3.3 · Workers AI · Durable Objects · Cloudflare Workflows</p>
+        <p>Llama 3.3 ï¿½ Workers AI ï¿½ Durable Objects ï¿½ Cloudflare Workflows</p>
       </header>
 
       <main className="chat-container">
@@ -71,17 +71,21 @@ export default function App() {
         )}
 
         <div className="messages">
-          {messages.map((msg) => (
-            <div key={msg.id} className={`message ${msg.role}`}>
-              <div className="message-content">
-                {msg.role === "assistant" && (
-                  <span className="avatar">AI</span>
-                )}
-                <div className="text">{renderContent(msg.content)}</div>
-                {msg.role === "user" && <span className="avatar">You</span>}
+          {messages.map((msg) => {
+            const text = renderContent(msg.content);
+            if (!text) return null;
+            return (
+              <div key={msg.id} className={`message ${msg.role}`}>
+                <div className="message-content">
+                  {msg.role === "assistant" && (
+                    <span className="avatar">AI</span>
+                  )}
+                  <div className="text">{text}</div>
+                  {msg.role === "user" && <span className="avatar">You</span>}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
           {isLoading && (
             <div className="message assistant">
