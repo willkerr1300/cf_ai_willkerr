@@ -12,7 +12,7 @@ class_name = "ResearchAgent"
 
 [[migrations]]
 tag = "v1"
-new_classes = ["ResearchAgent"]
+new_sqlite_classes = ["ResearchAgent"]
 
 [[workflows]]
 name = "research-workflow"
