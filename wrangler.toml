@@ -1,0 +1,24 @@
+name = "cf-ai-willkerr"
+main = "src/server.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "RESEARCH_AGENT"
+class_name = "ResearchAgent"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ResearchAgent"]
+
+[[workflows]]
+name = "research-workflow"
+binding = "RESEARCH_WORKFLOW"
+class_name = "ResearchWorkflow"
+
+[assets]
+directory = "./dist/client"
+binding = "ASSETS"

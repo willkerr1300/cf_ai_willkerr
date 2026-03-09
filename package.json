@@ -1,0 +1,31 @@
+{
+  "name": "cf-ai-willkerr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:worker\"",
+    "dev:client": "vite build --watch",
+    "dev:worker": "wrangler dev",
+    "build": "vite build",
+    "deploy": "npm run build && wrangler deploy",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "agents": "^0.0.53",
+    "ai": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "workers-ai-provider": "^0.4.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "wrangler": "^3.109.3"
+  }
+}
