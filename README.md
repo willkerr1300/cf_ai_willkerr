@@ -1,4 +1,5 @@
 # cf_ai_willkerr - AI Research Agent
+Deployed at: https://cf-ai-willkerr.williamkerr1300.workers.dev/
 
 An AI-powered research assistant built on Cloudflare's developer platform. Uses a persistent **Durable Object** agent for conversation memory, **Cloudflare Workflows** for multi-step research coordination, and **Workers AI (Llama 3.3 70B)** for intelligence - all with a real-time streaming chat UI.
 
